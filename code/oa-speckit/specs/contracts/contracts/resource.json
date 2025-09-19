@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Resource API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/resources/{id}": {
+      "get": {
+        "summary": "Get resource details",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource details",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Resource" }
+              }
+            }
+          },
+          "404": { "description": "Not found" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Resource": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "type": "string", "enum": ["active", "broken"] }
+        },
+        "required": ["id", "type", "title", "url", "description", "status"]
+      }
+    }
+  }
+}
