@@ -12,6 +12,10 @@ node_modules/
 /vendor/bundle/
 .byebug_history
 
+# Ignore Rails backend cache and tmp files
+backend/tmp/
+backend/tmp/cache/
+
 # System
 .DS_Store
 *.swp
