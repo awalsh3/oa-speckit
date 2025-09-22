@@ -14,7 +14,7 @@ export default function SignupPage() {
         ) : (
           <form
             className="space-y-4"
-            onSubmit={e => {
+            onSubmit={(e) => {
               e.preventDefault();
               setSubmitted(true);
             }}
@@ -46,10 +46,14 @@ export default function SignupPage() {
           </form>
         )}
         <div className="mt-4 text-center">
-          <Link href="/auth" className="text-blue-600 hover:underline">Already have an account? Log in</Link>
+          <Link href="/auth" className="text-blue-600 hover:underline">
+            Already have an account? Log in
+          </Link>
         </div>
         <div className="mt-4 text-center">
-          <Link href="/" className="text-gray-500 hover:underline">← Back to Hashtags</Link>
+          <Link href="/" className="text-gray-500 hover:underline">
+            ← Back to Hashtags
+          </Link>
         </div>
       </div>
     </main>

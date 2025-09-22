@@ -23,7 +23,7 @@ export default function HashtagImage({ hashtag, alt }: HashtagImageProps) {
         width={600}
         height={300}
         className="w-full h-auto rounded-lg object-contain bg-white"
-        style={{ maxHeight: '350px', objectFit: 'contain' }}
+        style={{ maxHeight: "350px", objectFit: "contain" }}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 600px"
         priority
       />

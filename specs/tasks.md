@@ -1,11 +1,11 @@
-
 # Tasks: Hashtag Activism App
 
 This file contains the actionable, dependency-ordered tasks for the Hashtag Activism App. All implementation must follow strict Test-Driven Development (TDD):
+
 - **Tests must be written before implementation.**
 - **Tests must fail before implementation begins.**
 - **No implementation task may begin until the corresponding test fails.**
-Tasks are grouped and marked for parallel execution [P] where possible. Each task includes a clear file path and dependency notes.
+  Tasks are grouped and marked for parallel execution [P] where possible. Each task includes a clear file path and dependency notes.
 
 ---
 
@@ -50,7 +50,6 @@ T014. Implement GET /hashtags/{id} endpoint in backend/src/api/
 T015. Implement GET /resources/{id} endpoint in backend/src/api/
 T016. Implement POST /user-actions endpoint in backend/src/api/
 
-
 ## Frontend Tasks
 
 T017. Set up Tailwind CSS in frontend/
@@ -62,13 +61,11 @@ T022. Add login/signup UI in frontend/src/pages/
 T023. Integrate frontend with backend API (mock data for MVP)
 T024. Make site responsive and mobile-friendly
 
-
 ## Integration & Edge Case Tasks
 
 T025. Implement error handling for broken resource links (frontend and backend)
 T026. Implement default hashtag set for empty trending list
 T027. Add health check endpoint to backend
-
 
 ## Testing & Polish Tasks [P]
 
@@ -79,8 +76,8 @@ T031. Write documentation for setup, API, and usage [P]
 
 ---
 
-
 ## Parallel Execution Guidance
+
 - Tasks marked [P] can be executed in parallel (e.g., model creation, contract tests, polish tasks)
 - All setup tasks must be completed before starting model, contract, or implementation tasks
 - **TDD Policy:** For every feature, write the test first, confirm it fails, then implement the feature to make the test pass. No implementation may begin until the test fails.
@@ -90,6 +87,7 @@ T031. Write documentation for setup, API, and usage [P]
 ---
 
 ## Task Agent Commands (examples)
+
 - To run all model creation tasks in parallel: T005 [P], T006 [P], T007 [P], T008 [P]
 - To run all contract tests in parallel: T009 [P], T010 [P], T011 [P], T012 [P]
 - To run all polish tasks in parallel: T027 [P], T028 [P], T029 [P], T030 [P]

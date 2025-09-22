@@ -40,17 +40,14 @@ export default function LoginPage() {
           </button>
         </form>
         <div className="mt-4 text-center">
-          <button
-            className="text-blue-600 hover:underline"
-            onClick={() => setIsLogin((v) => !v)}
-          >
-            {isLogin
-              ? "Don't have an account? Sign up"
-              : "Already have an account? Log in"}
+          <button className="text-blue-600 hover:underline" onClick={() => setIsLogin((v) => !v)}>
+            {isLogin ? "Don't have an account? Sign up" : "Already have an account? Log in"}
           </button>
         </div>
         <div className="mt-4 text-center">
-          <Link href="/" className="text-gray-500 hover:underline">← Back to Hashtags</Link>
+          <Link href="/" className="text-gray-500 hover:underline">
+            ← Back to Hashtags
+          </Link>
         </div>
       </div>
     </main>
