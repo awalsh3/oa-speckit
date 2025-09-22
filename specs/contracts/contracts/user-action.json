@@ -1,0 +1,57 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "User Action API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/user-actions": {
+      "post": {
+        "summary": "Mark action as completed",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserActionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Action marked as completed",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/UserAction" }
+              }
+            }
+          },
+          "400": { "description": "Invalid input" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UserActionInput": {
+        "type": "object",
+        "properties": {
+          "user_id": { "type": "string" },
+          "resource_id": { "type": "string" }
+        },
+        "required": ["user_id", "resource_id"]
+      },
+      "UserAction": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "user_id": { "type": "string" },
+          "resource_id": { "type": "string" },
+          "completed_at": { "type": "string", "format": "date-time" }
+        },
+        "required": ["id", "user_id", "resource_id", "completed_at"]
+      }
+    }
+  }
+}

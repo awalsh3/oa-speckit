@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Hashtag API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/hashtags": {
+      "get": {
+        "summary": "List trending hashtags",
+        "responses": {
+          "200": {
+            "description": "A list of hashtags",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Hashtag" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hashtags/{id}": {
+      "get": {
+        "summary": "Get hashtag details",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Hashtag details",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Hashtag" }
+              }
+            }
+          },
+          "404": { "description": "Not found" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Hashtag": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string" },
+          "description": { "type": "string" },
+          "resources": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Resource" }
+          },
+          "trend_score": { "type": "number" }
+        },
+        "required": ["id", "text", "description", "resources", "trend_score"]
+      },
+      "Resource": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "type": "string", "enum": ["active", "broken"] }
+        },
+        "required": ["id", "type", "title", "url", "description", "status"]
+      }
+    }
+  }
+}
