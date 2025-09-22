@@ -11,6 +11,7 @@ node_modules/
 /.bundle/
 /vendor/bundle/
 .byebug_history
+backend/storage/*.sqlite3
 
 # Ignore Rails backend cache and tmp files
 backend/tmp/
